@@ -476,13 +476,10 @@ ul{ margin:0; padding:0; list-style:none; }
 
 /* case cards */
 .case-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  display:flex;
+  flex-direction: column;
   gap: 24px;
-}
-
-.case-grid-simple{
-  grid-template-columns: repeat(2, 1fr);
+  max-width: 760px;
 }
 
 .case-card{
@@ -746,9 +743,6 @@ ul{ margin:0; padding:0; list-style:none; }
 /* responsive */
 @media (max-width: 900px){
   .hero-inner{
-    grid-template-columns: 1fr;
-  }
-  .case-grid, .case-grid-simple{
     grid-template-columns: 1fr;
   }
   .skills-grid{
