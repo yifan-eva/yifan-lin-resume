@@ -594,6 +594,30 @@ ul{ margin:0; padding:0; list-style:none; }
   padding: 4px 0;
 }
 
+.case-screenshot-gallery{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 4px 0 20px;
+}
+
+.case-screenshot{
+  margin: 0;
+}
+
+.case-screenshot img{
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.case-screenshot figcaption{
+  margin-top: 8px;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
 .asset-note{
   margin-top: 24px;
   padding: 16px 18px;
