@@ -16,6 +16,32 @@ themeToggle.addEventListener('click', () => {
   try { localStorage.setItem('theme', next); } catch (e) {}
 });
 
+// photo lightbox
+const avatarTrigger = document.getElementById('avatarTrigger');
+const photoLightbox = document.getElementById('photoLightbox');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(){
+  photoLightbox.classList.add('open');
+  photoLightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(){
+  photoLightbox.classList.remove('open');
+  photoLightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+avatarTrigger.addEventListener('click', openLightbox);
+lightboxClose.addEventListener('click', closeLightbox);
+photoLightbox.addEventListener('click', (e) => {
+  if (e.target === photoLightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
 // mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
