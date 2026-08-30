@@ -26,45 +26,45 @@
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --navy: #f1f5f9;
-    --navy-soft: #cbd5e1;
-    --ink: #dde3ec;
-    --muted: #93a0b4;
-    --line: #2a3244;
-    --bg: #0a0e17;
-    --bg-alt: #111828;
-    --card-bg: #141c2e;
-    --header-bg: rgba(10, 14, 23, 0.82);
-    --accent: #8b93f8;
-    --accent-soft: rgba(139, 147, 248, 0.16);
-    --accent-2: #2dd4bf;
-    --avatar-ring: #4338ca;
-    --btn-primary-bg: #eef1f8;
-    --btn-primary-text: #0a0e17;
-    --shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.55);
-    --shadow-hover: 0 16px 40px -12px rgba(0, 0, 0, 0.65);
+    --navy: #e4e8f1;
+    --navy-soft: #b9c1d1;
+    --ink: #c8cedb;
+    --muted: #838da0;
+    --line: #272e3d;
+    --bg: #14181f;
+    --bg-alt: #1a1f29;
+    --card-bg: #1e2430;
+    --header-bg: rgba(20, 24, 31, 0.82);
+    --accent: #9aa3f7;
+    --accent-soft: rgba(154, 163, 247, 0.14);
+    --accent-2: #38d9c9;
+    --avatar-ring: #55499e;
+    --btn-primary-bg: #e7eaf2;
+    --btn-primary-text: #181c24;
+    --shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 16px 40px -12px rgba(0, 0, 0, 0.55);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"]{
-  --navy: #f1f5f9;
-  --navy-soft: #cbd5e1;
-  --ink: #dde3ec;
-  --muted: #93a0b4;
-  --line: #2a3244;
-  --bg: #0a0e17;
-  --bg-alt: #111828;
-  --card-bg: #141c2e;
-  --header-bg: rgba(10, 14, 23, 0.82);
-  --accent: #8b93f8;
-  --accent-soft: rgba(139, 147, 248, 0.16);
-  --accent-2: #2dd4bf;
-  --avatar-ring: #4338ca;
-  --btn-primary-bg: #eef1f8;
-  --btn-primary-text: #0a0e17;
-  --shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.55);
-  --shadow-hover: 0 16px 40px -12px rgba(0, 0, 0, 0.65);
+  --navy: #e4e8f1;
+  --navy-soft: #b9c1d1;
+  --ink: #c8cedb;
+  --muted: #838da0;
+  --line: #272e3d;
+  --bg: #14181f;
+  --bg-alt: #1a1f29;
+  --card-bg: #1e2430;
+  --header-bg: rgba(20, 24, 31, 0.82);
+  --accent: #9aa3f7;
+  --accent-soft: rgba(154, 163, 247, 0.14);
+  --accent-2: #38d9c9;
+  --avatar-ring: #55499e;
+  --btn-primary-bg: #e7eaf2;
+  --btn-primary-text: #181c24;
+  --shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 16px 40px -12px rgba(0, 0, 0, 0.55);
   color-scheme: dark;
 }
 
