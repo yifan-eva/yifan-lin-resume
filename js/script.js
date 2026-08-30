@@ -115,7 +115,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => revealObserver.observe(el));
 
-// contact form -> mailto
+// contact form -> Gmail compose (opens in browser instead of a mail app)
 const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -132,6 +132,6 @@ contactForm.addEventListener('submit', (e) => {
     `公司名稱：${company}\n\n` +
     `訊息內容：\n${message}`;
 
-  const mailto = `mailto:eva4122525@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=eva4122525@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.open(gmailUrl, '_blank');
 });

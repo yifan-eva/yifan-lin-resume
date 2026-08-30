@@ -579,8 +579,8 @@ ul{ margin:0; padding:0; list-style:none; }
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-solid), var(--accent-2-solid));
-  color: #fff;
+  background: #fff;
+  color: var(--navy);
   font-size: 2.2rem;
   font-weight: 800;
   font-family: inherit;
