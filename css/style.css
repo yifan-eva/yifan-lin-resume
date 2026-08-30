@@ -70,6 +70,13 @@
 
 *, *::before, *::after{ box-sizing: border-box; }
 
+button, input, textarea{
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  color: inherit;
+}
+
 html{ scroll-behavior: smooth; }
 
 body{
