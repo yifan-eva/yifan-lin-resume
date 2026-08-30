@@ -198,13 +198,35 @@
               <li>不同客戶的即時性需求</li>
             </ul>
 
+            <h4 class="sub-heading">處理流程</h4>
+            <div class="flow-diagram">
+              <div class="flow-step"><span class="flow-step-num">1</span>客戶完成一輪對話，最後一則訊息後持續一段時間沒有新增內容</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">2</span>系統取得上次檢測完成位置之後、本輪對話新增的訊息範圍</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">3</span>AI 分析檢測範圍內容，整理為零個、一個或多個事件</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">4</span>有事件時，客戶問題列表更新待處理數量與最後檢測時間</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">5</span>客服進入客戶問題詳情，查看事件主題與介入原因</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">6</span>客服更新事件狀態、填寫備註，或進入聊天室回覆客戶</div>
+            </div>
+
+            <h4 class="sub-heading">例外處理</h4>
+            <ul class="bullet-list">
+              <li>等待期間收到新訊息：由最新訊息時間重新計算等待時間，避免同一輪對話被拆成多次分析。</li>
+              <li>檢測進行中收到新訊息：本次維持原檢測範圍，新增內容留待下一次檢測。</li>
+              <li>檢測失敗：不更新檢測完成位置，保留原範圍重新執行，避免內容遺漏。</li>
+              <li>沒有需要人工介入的內容：完成檢測但不建立事件。</li>
+            </ul>
+
             <h4 class="sub-heading">目前狀態</h4>
             <p>最新版本仍在測試階段，尚未累積正式客戶回饋與成效數據。</p>
 
             <div class="asset-note">
               <span class="asset-note-label">相關素材整理中</span>
               <div class="asset-chip-row">
-                <span class="asset-chip">功能流程圖</span>
                 <span class="asset-chip">問題管理後台畫面</span>
                 <span class="asset-chip">AI 與人工接手狀態圖</span>
                 <span class="asset-chip">應用需求文件節錄</span>
