@@ -324,10 +324,6 @@ ul{ margin:0; padding:0; list-style:none; }
   color: var(--accent);
 }
 
-.contact-strip li.pending{
-  opacity: .55;
-}
-
 .pending-text{
   color: var(--muted);
   font-style: italic;
@@ -365,11 +361,38 @@ ul{ margin:0; padding:0; list-style:none; }
   margin: 0 0 10px;
 }
 
-.goal-text{
-  font-size: .92rem;
-  color: var(--muted);
-  margin:0;
+.quick-facts{
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.quick-facts li{
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quick-facts li:first-child{
+  padding-top: 0;
+  border-top: none;
+}
+
+.quick-facts-label{
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.quick-facts-value{
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--navy);
 }
 
 /* timeline */
