@@ -320,18 +320,11 @@
             <p>另外規劃「不自動降級」原則：客戶一旦由對話明確確認為現有客戶，不會因為後續只出現一般詢問、沒有再次提及購買資訊，就被自動降回潛在客戶或一般用戶。避免分類反覆跳動、失去參考價值。</p>
 
             <h4 class="sub-heading">每日分析流程</h4>
-            <div class="flow-diagram">
-              <div class="flow-step"><span class="flow-step-num">1</span>系統於每日固定時間觸發客戶分類排程</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">2</span>程式檢查客戶是否有尚未分析的新對話</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">3</span>有新對話時，將目前標籤、新增對話與分類定義提供給 AI</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">4</span>AI 回傳客戶分類、判斷原因與對話依據</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">5</span>系統更新 AI 標籤，並保存判斷原因、依據與分析時間</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">6</span>客服於標籤詳情頁查看分類與原因，必要時點擊「重新分析」</div>
+            <div class="case-screenshot-gallery">
+              <figure class="case-screenshot">
+                <img src="assets/ai-tagging-flowchart.png?v=1" alt="每日排程與人工重新分析流程圖，含全程固定規則" loading="lazy">
+                <figcaption>每日排程／人工重新分析流程，含判斷條件、AI 回傳異常處理與全程固定規則</figcaption>
+              </figure>
             </div>
 
             <h4 class="sub-heading">例外處理</h4>
