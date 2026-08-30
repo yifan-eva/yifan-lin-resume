@@ -628,6 +628,22 @@ ul{ margin:0; padding:0; list-style:none; }
   margin: 0;
 }
 
+.screenshot-pair{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 4px 0 20px;
+}
+
+.screenshot-pair .case-screenshot{
+  flex: 1 1 240px;
+}
+
+.screenshot-pair .case-screenshot img{
+  width: 100%;
+  display: block;
+}
+
 .case-screenshot img{
   width: 100%;
   border: 1px solid var(--line);
