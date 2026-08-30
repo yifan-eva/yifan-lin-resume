@@ -389,6 +389,13 @@ ul{ margin:0; padding:0; list-style:none; }
   letter-spacing: .04em;
 }
 
+.hero-avatar .tag-row{
+  justify-content: center;
+  margin: 20px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
 .quick-facts-value{
   font-size: .95rem;
   font-weight: 600;
