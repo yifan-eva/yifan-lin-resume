@@ -16,12 +16,14 @@ themeToggle.addEventListener('click', () => {
   try { localStorage.setItem('theme', next); } catch (e) {}
 });
 
-// photo lightbox
-const avatarTrigger = document.getElementById('avatarTrigger');
+// image lightbox (avatar photo + all case screenshots)
 const photoLightbox = document.getElementById('photoLightbox');
 const lightboxClose = document.getElementById('lightboxClose');
+const lightboxImg = document.getElementById('lightboxImg');
 
-function openLightbox(){
+function openLightbox(src, alt){
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
   photoLightbox.classList.add('open');
   photoLightbox.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -33,7 +35,26 @@ function closeLightbox(){
   document.body.style.overflow = '';
 }
 
-avatarTrigger.addEventListener('click', openLightbox);
+const avatarTrigger = document.getElementById('avatarTrigger');
+avatarTrigger.addEventListener('click', () => {
+  const img = avatarTrigger.querySelector('img');
+  openLightbox(img.src, img.alt);
+});
+
+document.querySelectorAll('.case-screenshot img').forEach(img => {
+  img.classList.add('zoomable');
+  img.setAttribute('role', 'button');
+  img.setAttribute('tabindex', '0');
+  img.setAttribute('aria-label', '放大檢視圖片');
+  img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  img.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openLightbox(img.src, img.alt);
+    }
+  });
+});
+
 lightboxClose.addEventListener('click', closeLightbox);
 photoLightbox.addEventListener('click', (e) => {
   if (e.target === photoLightbox) closeLightbox();
