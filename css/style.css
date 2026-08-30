@@ -400,6 +400,11 @@ ul{ margin:0; padding:0; list-style:none; }
   font-size: .95rem;
   font-weight: 600;
   color: var(--navy);
+  overflow-wrap: anywhere;
+}
+
+.quick-facts-value a:hover{
+  color: var(--accent);
 }
 
 /* timeline */
