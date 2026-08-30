@@ -233,7 +233,7 @@
 
             <h4 class="sub-heading">關鍵產品判斷</h4>
             <p>初期採用即時逐訊息判斷，但測試後發現同一件事情可能產生多筆問題，增加後台處理負擔。</p>
-            <p>後續將分析單位調整為一段對話事件，並在使用者最後一則訊息後，依客戶設定的等待時間進行分析，最低為五分鐘，以兼顧：</p>
+            <p>後續將分析單位調整為一段對話事件，並在使用者最後一則訊息後持續兩小時沒有新增內容時才開始分析，以兼顧：</p>
             <ul class="bullet-list">
               <li>問題資訊完整度</li>
               <li>人工客服反應時間</li>
@@ -242,18 +242,11 @@
             </ul>
 
             <h4 class="sub-heading">流程圖</h4>
-            <div class="flow-diagram">
-              <div class="flow-step"><span class="flow-step-num">1</span>客戶完成一輪對話，最後一則訊息後持續一段時間沒有新增內容</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">2</span>系統取得上次檢測完成位置之後、本輪對話新增的訊息範圍</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">3</span>AI 分析檢測範圍內容，整理為零個、一個或多個事件</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">4</span>有事件時，客戶問題列表更新待處理數量與最後檢測時間</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">5</span>客服進入客戶問題詳情，查看事件主題與介入原因</div>
-              <div class="flow-arrow">↓</div>
-              <div class="flow-step"><span class="flow-step-num">6</span>客服更新事件狀態、填寫備註，或進入聊天室回覆客戶</div>
+            <div class="case-screenshot-gallery">
+              <figure class="case-screenshot">
+                <img src="assets/ai-issue-mgmt-flowchart.png?v=1" alt="客戶問題檢測與人工接手流程圖，含固定規則與操作" loading="lazy">
+                <figcaption>檢測時機、AI 分析與人工接手流程，含跨區段不合併等固定規則</figcaption>
+              </figure>
             </div>
 
             <h4 class="sub-heading">例外處理</h4>
