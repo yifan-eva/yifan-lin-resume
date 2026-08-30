@@ -876,6 +876,34 @@ ul{ margin:0; padding:0; list-style:none; }
   padding-top: 20px;
 }
 
+.case-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.case-meta-item{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: .8rem;
+}
+
+.case-meta-label{
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.case-meta-value{
+  font-weight: 600;
+  color: var(--navy);
+}
+
 .case-body p{
   color: var(--ink);
   margin: 0 0 8px;
