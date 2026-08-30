@@ -1,5 +1,21 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+
+function currentTheme(){
+  const stored = root.getAttribute('data-theme');
+  if (stored) return stored;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+themeToggle.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
+});
+
 // mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
