@@ -259,6 +259,15 @@
               <li>透過模擬客戶對話執行功能測試。</li>
             </ul>
 
+            <h4 class="sub-heading">客戶分類定義</h4>
+            <ul class="tag-definition-list">
+              <li><span class="tag-def-badge">資訊不足</span>尚未分析、對話內容不足，或目前無法明確判斷。</li>
+              <li><span class="tag-def-badge">一般用戶</span>有進行詢問，但尚未出現明確需求或購買意願。</li>
+              <li><span class="tag-def-badge">潛在客戶</span>已表達需求或興趣，正在了解、比較或評估。</li>
+              <li><span class="tag-def-badge">高意向客戶</span>已出現明確的下一步行動意願，例如詢問價格、付款或申請流程。</li>
+              <li><span class="tag-def-badge">現有客戶</span>對話中明確表示已購買、已申請或正在使用。</li>
+            </ul>
+
             <h4 class="sub-heading">關鍵產品判斷</h4>
             <p>系統每天凌晨三點執行批次分析，先由程式判斷當日是否有對話，再針對符合條件的客戶進行 AI 分析，以減少不必要的 Token 使用。</p>
             <p>AI 標籤與人工標籤分開管理：</p>
@@ -267,6 +276,29 @@
               <li>人工標籤由客服自行新增、修改及刪除。</li>
               <li>避免 AI 重新分析時覆蓋人工客服留下的重要觀察。</li>
               <li>人工客服可保留多個較細緻的客戶備註。</li>
+            </ul>
+            <p>另外規劃「不自動降級」原則：客戶一旦由對話明確確認為現有客戶，不會因為後續只出現一般詢問、沒有再次提及購買資訊，就被自動降回潛在客戶或一般用戶。避免分類反覆跳動、失去參考價值。</p>
+
+            <h4 class="sub-heading">每日分析流程</h4>
+            <div class="flow-diagram">
+              <div class="flow-step"><span class="flow-step-num">1</span>系統於每日固定時間觸發客戶分類排程</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">2</span>程式檢查客戶是否有尚未分析的新對話</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">3</span>有新對話時，將目前標籤、新增對話與分類定義提供給 AI</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">4</span>AI 回傳客戶分類、判斷原因與對話依據</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">5</span>系統更新 AI 標籤，並保存判斷原因、依據與分析時間</div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step"><span class="flow-step-num">6</span>客服於標籤詳情頁查看分類與原因，必要時點擊「重新分析」</div>
+            </div>
+
+            <h4 class="sub-heading">例外處理</h4>
+            <ul class="bullet-list">
+              <li>沒有新增對話、仍在對話中、已分析過或分析進行中：直接略過，不呼叫 AI，節省 Token 成本。</li>
+              <li>AI 沒有回傳或發生錯誤：維持原 AI 標籤，並標示「分析異常」。</li>
+              <li>AI 回傳分類與目前相同：保留原分類，不產生重複異動紀錄。</li>
             </ul>
 
             <h4 class="sub-heading">驗證方式</h4>

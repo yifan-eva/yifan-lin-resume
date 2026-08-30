@@ -176,6 +176,29 @@ ul{ margin:0; padding:0; list-style:none; }
   color: var(--ink);
 }
 
+.tag-definition-list li{
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: .92rem;
+}
+
+.tag-definition-list li:first-child{
+  padding-top: 0;
+  border-top: none;
+}
+
+.tag-def-badge{
+  flex: none;
+  width: 88px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
 /* hero */
 .hero{
   padding-top: 72px;
