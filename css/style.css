@@ -37,7 +37,7 @@
     --header-bg: rgba(20, 24, 31, 0.82);
     --accent: #9aa3f7;
     --accent-soft: rgba(154, 163, 247, 0.14);
-    --accent-2: #38d9c9;
+    --accent-2: #2bb3a3;
     --avatar-ring: #55499e;
     --btn-primary-bg: #e7eaf2;
     --btn-primary-text: #181c24;
@@ -59,7 +59,7 @@
   --header-bg: rgba(20, 24, 31, 0.82);
   --accent: #9aa3f7;
   --accent-soft: rgba(154, 163, 247, 0.14);
-  --accent-2: #38d9c9;
+  --accent-2: #2bb3a3;
   --avatar-ring: #55499e;
   --btn-primary-bg: #e7eaf2;
   --btn-primary-text: #181c24;
@@ -855,7 +855,7 @@ ul{ margin:0; padding:0; list-style:none; }
 
 .expand-hint{
   font-size: .78rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent-2);
 }
 
