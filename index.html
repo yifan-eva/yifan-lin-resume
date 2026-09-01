@@ -619,6 +619,24 @@
 
 </main>
 
+<div id="debugBadge" style="position:fixed; bottom:70px; right:16px; z-index:9999; background:#ff2d55; color:#fff; font:bold 13px/1.4 monospace; padding:10px 14px; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.3); max-width:260px;"></div>
+<script>
+(function(){
+  var el = document.getElementById('debugBadge');
+  function update(){
+    el.innerHTML =
+      'innerWidth: ' + window.innerWidth + '<br>' +
+      'outerWidth: ' + window.outerWidth + '<br>' +
+      'devicePixelRatio: ' + window.devicePixelRatio + '<br>' +
+      'docClientWidth: ' + document.documentElement.clientWidth + '<br>' +
+      'screen.width: ' + screen.width + '<br>' +
+      'matches720: ' + window.matchMedia('(max-width: 720px)').matches;
+  }
+  update();
+  window.addEventListener('resize', update);
+})();
+</script>
+
 <footer class="site-footer">
   <div class="container">
     <p>© <span id="year"></span> 林翊凡. All rights reserved.</p>
