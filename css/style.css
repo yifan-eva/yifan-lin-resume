@@ -224,9 +224,11 @@ ul{ margin:0; padding:0; list-style:none; }
   display:none;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   gap: 5px;
   width: 36px;
   height: 36px;
+  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -234,6 +236,8 @@ ul{ margin:0; padding:0; list-style:none; }
 
 .nav-toggle span{
   display:block;
+  width: 100%;
+  flex: none;
   height: 2px;
   background: var(--navy);
   border-radius: 2px;

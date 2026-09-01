@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="stylesheet" href="css/style.css?v=10">
 <script>
 (function(){
   try {
@@ -618,32 +618,6 @@
   </section>
 
 </main>
-
-<div id="debugBadge" style="position:fixed; bottom:70px; right:16px; z-index:9999; background:#ff2d55; color:#fff; font:bold 13px/1.4 monospace; padding:10px 14px; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.3); max-width:260px;"></div>
-<script>
-(function(){
-  var el = document.getElementById('debugBadge');
-  function update(){
-    var nt = document.getElementById('navToggle');
-    var ntStyle = nt ? getComputedStyle(nt) : null;
-    var ntRect = nt ? nt.getBoundingClientRect() : null;
-    var spans = nt ? nt.querySelectorAll('span').length : 0;
-    var spanStyle = (nt && nt.querySelector('span')) ? getComputedStyle(nt.querySelector('span')) : null;
-    el.innerHTML =
-      'innerWidth: ' + window.innerWidth + '<br>' +
-      'matches720: ' + window.matchMedia('(max-width: 720px)').matches + '<br>' +
-      'navToggle display: ' + (ntStyle ? ntStyle.display : 'N/A') + '<br>' +
-      'navToggle visibility: ' + (ntStyle ? ntStyle.visibility : 'N/A') + '<br>' +
-      'navToggle opacity: ' + (ntStyle ? ntStyle.opacity : 'N/A') + '<br>' +
-      'navToggle rect: ' + (ntRect ? Math.round(ntRect.width)+'x'+Math.round(ntRect.height)+' @'+Math.round(ntRect.left)+','+Math.round(ntRect.top) : 'N/A') + '<br>' +
-      'span count: ' + spans + '<br>' +
-      'span bg: ' + (spanStyle ? spanStyle.backgroundColor : 'N/A') + '<br>' +
-      'span size: ' + (spanStyle ? spanStyle.width+' x '+spanStyle.height : 'N/A');
-  }
-  update();
-  window.addEventListener('resize', update);
-})();
-</script>
 
 <footer class="site-footer">
   <div class="container">
