@@ -624,13 +624,21 @@
 (function(){
   var el = document.getElementById('debugBadge');
   function update(){
+    var nt = document.getElementById('navToggle');
+    var ntStyle = nt ? getComputedStyle(nt) : null;
+    var ntRect = nt ? nt.getBoundingClientRect() : null;
+    var spans = nt ? nt.querySelectorAll('span').length : 0;
+    var spanStyle = (nt && nt.querySelector('span')) ? getComputedStyle(nt.querySelector('span')) : null;
     el.innerHTML =
       'innerWidth: ' + window.innerWidth + '<br>' +
-      'outerWidth: ' + window.outerWidth + '<br>' +
-      'devicePixelRatio: ' + window.devicePixelRatio + '<br>' +
-      'docClientWidth: ' + document.documentElement.clientWidth + '<br>' +
-      'screen.width: ' + screen.width + '<br>' +
-      'matches720: ' + window.matchMedia('(max-width: 720px)').matches;
+      'matches720: ' + window.matchMedia('(max-width: 720px)').matches + '<br>' +
+      'navToggle display: ' + (ntStyle ? ntStyle.display : 'N/A') + '<br>' +
+      'navToggle visibility: ' + (ntStyle ? ntStyle.visibility : 'N/A') + '<br>' +
+      'navToggle opacity: ' + (ntStyle ? ntStyle.opacity : 'N/A') + '<br>' +
+      'navToggle rect: ' + (ntRect ? Math.round(ntRect.width)+'x'+Math.round(ntRect.height)+' @'+Math.round(ntRect.left)+','+Math.round(ntRect.top) : 'N/A') + '<br>' +
+      'span count: ' + spans + '<br>' +
+      'span bg: ' + (spanStyle ? spanStyle.backgroundColor : 'N/A') + '<br>' +
+      'span size: ' + (spanStyle ? spanStyle.width+' x '+spanStyle.height : 'N/A');
   }
   update();
   window.addEventListener('resize', update);
