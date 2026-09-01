@@ -619,6 +619,33 @@
 
 </main>
 
+<div id="debugBadge" style="position:fixed; bottom:70px; right:16px; z-index:9999; background:#ff2d55; color:#fff; font:bold 12px/1.4 monospace; padding:10px 14px; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.3); max-width:280px;"></div>
+<script>
+(function(){
+  var el = document.getElementById('debugBadge');
+  function update(){
+    var input = document.querySelector('.contact-form input');
+    var label = input ? input.closest('label') : null;
+    var cs = input ? getComputedStyle(input) : null;
+    var rect = input ? input.getBoundingClientRect() : null;
+    var labelRect = label ? label.getBoundingClientRect() : null;
+    el.innerHTML = !input ? 'no input found' :
+      'input rect: ' + Math.round(rect.width)+'x'+Math.round(rect.height) + ' @'+Math.round(rect.left)+','+Math.round(rect.top) + '<br>' +
+      'label rect: ' + Math.round(labelRect.width)+'x'+Math.round(labelRect.height) + '<br>' +
+      'box-sizing: ' + cs.boxSizing + '<br>' +
+      'padding: ' + cs.padding + '<br>' +
+      'border: ' + cs.borderWidth + ' ' + cs.borderStyle + '<br>' +
+      'appearance: ' + cs.appearance + '<br>' +
+      'webkitAppearance: ' + cs.webkitAppearance + '<br>' +
+      'boxShadow: ' + cs.boxShadow + '<br>' +
+      'outline: ' + cs.outline + '<br>' +
+      'width: ' + cs.width + ' / minWidth: ' + cs.minWidth;
+  }
+  update();
+  window.addEventListener('resize', update);
+})();
+</script>
+
 <footer class="site-footer">
   <div class="container">
     <p>© <span id="year"></span> 林翊凡. All rights reserved.</p>
